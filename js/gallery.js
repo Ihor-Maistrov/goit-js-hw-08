@@ -70,7 +70,7 @@ const linkElem = document.querySelector('.gallery-link')
 
 function imageTemplate(image) {
     return `<li class="gallery-item">
-            <a class="gallery-link" href="${image.original}" target="_blank">
+            <a class="gallery-link" onclick="return false" href="${image.original}">
                 <img class="gallery-image" src="${image.preview}"
                     data-source="${image.original}"
                     alt="${image.description}" />

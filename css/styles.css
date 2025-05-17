@@ -14,6 +14,10 @@ justify-content: center;
     height: 200px;
 }
 
+.gallery-link {
+    cursor: url("../symbol-defs.svg"),  auto ;
+}
+
 .modal {
     background: rgba(46, 47, 66, 0.8);
     width: 1440px;
