@@ -65,8 +65,10 @@ const images = [
     ];
     
 const container = document.querySelector('.gallery');
-const liElem = document.querySelector('.gallery-item')
-const linkElem = document.querySelector('.gallery-link')
+const liElem = document.querySelector('.gallery-item');
+const linkElem = document.querySelector('.gallery-link');
+
+let instance;
 
 function imageTemplate(image) {
     return `<li class="gallery-item">
@@ -96,13 +98,19 @@ renderImages();
 // });
 
 function openModal(img) {
-    const instance = basicLightbox.create(`
+     instance = basicLightbox.create(`
         <div class="modal">
             <img class="modal-img" src="${img}" width="1112" height="640" />
         </div>
         `);
         
     instance.show();
+
+    document.querySelector('.modal-img').addEventListener('click', closeModal);
+}
+
+function closeModal() {
+    instance.close();
 }
 
 container.addEventListener('click', e => {
