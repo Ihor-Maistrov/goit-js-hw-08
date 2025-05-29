@@ -90,12 +90,6 @@ function renderImages() {
 
 renderImages();
 
-// console.log(linkElem);
-
-
-// linkElem.addEventListener('click', e => {
-//     e.preventDefault();
-// });
 
 function openModal(img) {
      instance = basicLightbox.create(`
