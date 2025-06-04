@@ -110,10 +110,8 @@ function closeModal() {
 
 container.addEventListener('click', e => {
     const imgElem = e.target;
-    console.log(imgElem);
     if (!imgElem) return;
 
     const img = imgElem.dataset.source;
-    console.log(img);
     openModal(img);
 });
