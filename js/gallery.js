@@ -105,10 +105,11 @@ function openModal(img) {
 
 function closeModal() {
     instance.close();
+    document.querySelector('.modal-img').removeEventListener("click");
 }
 
 container.addEventListener('click', e => {
-    const imgElem = e.target.closest('.gallery-image');
+    const imgElem = e.target;
     console.log(imgElem);
     if (!imgElem) return;
 
