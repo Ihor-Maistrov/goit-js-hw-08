@@ -90,6 +90,7 @@ function renderImages() {
 
 renderImages();
 
+let modalListener;
 
 function openModal(img) {
      instance = basicLightbox.create(`
@@ -100,17 +101,19 @@ function openModal(img) {
         
     instance.show();
 
-    document.querySelector('.modal-img').addEventListener('click', closeModal);
+    let modalListener = document.querySelector('.modal-img');
+    modalListener.addEventListener('click', closeModal);
 }
 
 function closeModal() {
     instance.close();
-    document.querySelector('.modal-img').removeEventListener("click");
+    modalListener.removeEventListener("click");
 }
 
 container.addEventListener('click', e => {
+    debugger
     const imgElem = e.target;
-    if (!imgElem) return;
+    if (!imgElem && imgElem === "img") return;
 
     const img = imgElem.dataset.source;
     openModal(img);
